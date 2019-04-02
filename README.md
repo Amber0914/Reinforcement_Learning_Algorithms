@@ -27,7 +27,7 @@ We use [FrozenLake-v0](https://gym.openai.com/envs/FrozenLake-v0/) without slipp
 
 ### Basic Q-Learning (with table method)
 ```
-python frozenlake_unslippery.py ----max_episodes-2000 --max_actions=99 --discount=0.95 --exploration_rate=1.0 --hidden_units=10
+python frozenlake_unslippery.py ----max_episodes-2000 --max_actions=99 --discount=0.95 --exploration_rate=1.0
 ```
 
 ### Deep Q-Learning (Deep Q Network) 
