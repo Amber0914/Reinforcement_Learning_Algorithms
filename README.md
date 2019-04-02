@@ -31,7 +31,7 @@ python3 frozenlake_unslippery.py --max_episodes=2000 --max_actions=99 --discount
 ```
 
 ### Deep Q-Learning (Deep Q Network) 
-max_episodes is need to larger than 15000.
+max_episodes ≥ 15000.
 ```
 python3 deep_frozenlake_unslippery.py --max_episodes=20000 --max_actions=99 --discount=0.95 --exploration_rate=1.0 --hidden_units=10
 ```
