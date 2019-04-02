@@ -127,5 +127,5 @@ if __name__ == '__main__':
     agent = DeepQAgent(args, env) # get agent
     print("START TRAINING...")
     agent.train()
-    print("\n\nTEST\n\n")
+    print("\n==============\nTEST==============\n")
     agent.test()
