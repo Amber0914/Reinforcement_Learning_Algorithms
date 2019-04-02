@@ -4,9 +4,6 @@ import random
 import gym
 from gym.envs.registration import register
 from argparse import ArgumentParser
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
 class Environment():
     def __init__(self):
         pass
