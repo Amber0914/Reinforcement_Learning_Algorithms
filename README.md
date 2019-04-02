@@ -18,11 +18,11 @@ gym==0.12.1
 pip3 install -r requirements.txt
 ```
 
-# Q-Learning
-## Medium Tutorial
+## Q-Learning
+### Medium Tutorial
 The complete tutoriol will be released as soon as possible.
 
-## Problem Definition
+### Problem Definition
 We use [FrozenLake-v0](https://gym.openai.com/envs/FrozenLake-v0/) without slippery and define it in class Environment
 
 ### Basic Q-Learning (with table method)
