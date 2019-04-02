@@ -29,52 +29,6 @@ We use [FrozenLake-v0](https://gym.openai.com/envs/FrozenLake-v0/) without slipp
 ```
 python frozenlake_unslippery.py ----max_episodes-2000 --max_actions=99 --discount=0.95 --exploration_rate=1.0 --hidden_units=10
 ```
-```output
-''' Output
-====== # Start at the state S (0, 0)
-'S'FFF
-FHFH
-FFFH
-HFFG
-====== # Take the Down action, the agent arrives from (0, 0) to (1, 0) 'F'
-  (Down)
-SFFF
-'F'HFH
-FFFH
-HFFG
-====== # Take the Down action, the agent arrives from (1, 0) to (2, 0) 'F'
-  (Down)
-SFFF
-FHFH
-'F'FFH
-HFFG
-====== # Take the Right action, the agent arrives from (2,0) to (2, 1) 'F'
-  (Right)
-SFFF
-FHFH
-F'F'FH
-HFFG
-====== # Take the Down action, the agent arrives from (2, 1) to (3, 1) 'F'
-  (Down)
-SFFF
-FHFH
-FFFH
-H'F'FG
-====== # Take the Right action, the agent arrives from (3, 1) to (3, 2) 'F'
-  (Right)
-SFFF
-FHFH
-FFFH
-HF'F'G
-====== # Take the Right action, the agent arrives the goal 'G'.
-  (Right)
-SFFF
-FHFH
-FFFH
-HFF'G'
-'''
-```
-
 
 ### Deep Q-Learning (Deep Q Network) 
 ```
