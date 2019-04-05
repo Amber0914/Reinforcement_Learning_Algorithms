@@ -75,13 +75,13 @@ class DeepQAgent():
             for i in range(max_episodes):
                 state = env.reset()
                 for j in range(max_actions):
-                    action, pred_Q = sess.run([self.action, self.a2],feed_dict={self.a0:np.eye(16)[state:state+1]})
+                    action, pred_Q = sess.run([self.action, self.a2],feed_dict={self.a0:np.eye(self.in_units)[state:state+1]})
                     
                     if np.random.rand()<exploration_rate: # exploration
                         action[0] = env.action_space.sample() # take a random action
 
                     next_state, rewards, done, info = env.step(action[0])
-                    next_Q = sess.run(self.a2,feed_dict={self.a0:np.eye(16)[next_state:next_state+1]})
+                    next_Q = sess.run(self.a2,feed_dict={self.a0:np.eye(self.in_units)[next_state:next_state+1]})
 
                     update_Q = pred_Q
                     update_Q [0,action[0]] = rewards + discount*np.max(next_Q)
@@ -105,7 +105,7 @@ class DeepQAgent():
             state = env.reset()
             for j in range(max_actions):
                 env.render()
-                action, pred_Q = sess.run([self.action, self.a2],feed_dict={self.a0:np.eye(16)[state:state+1]})
+                action, pred_Q = sess.run([self.action, self.a2],feed_dict={self.a0:np.eye(self.in_units)[state:state+1]})
                 next_state, rewards, done, info = env.step(action[0])
                 state = next_state
                 if done:
