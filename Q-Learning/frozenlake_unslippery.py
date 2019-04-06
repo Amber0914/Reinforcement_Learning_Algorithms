@@ -66,7 +66,7 @@ class QAgent():
                 action = self._policy('train', state, exploration_rate)
                 new_state, reward, done, info = self.env.step(action)
                 # The formulation of updating Q(s, a)
-                self.Q[state, action] = self.Q [state, action] + learning_rate*(reward+discount*np.max(self.Q [new_state, :]) - self.Q [state, action])
+                self.Q[state, action] = self.Q[state, action] + learning_rate*(reward+discount*np.max(self.Q[new_state, :]) - self.Q[state, action])
                 state = new_state # update the current state
                 if done == True:  # if fall in the hole or arrive to the goal, then this episode is terminated.
                     break
