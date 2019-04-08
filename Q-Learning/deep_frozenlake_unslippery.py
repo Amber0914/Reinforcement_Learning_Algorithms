@@ -48,7 +48,7 @@ class DeepQAgent():
         self.b1 = tf.Variable(tf.random_uniform([self.hidden_units], 0, 0.01, dtype=tf.float32), name='b1') # bias
         self.a1 = tf.nn.relu(tf.matmul(self.a0, self.w1) + self.b1) # the ouput of hidden layer
         
-        # from input layer to output layer
+        # from hidden layer to output layer
         self.w2 = tf.Variable(tf.zeros([self.hidden_units, self.out_units], dtype=tf.float32), name='w2') # weight
         self.b2 = tf.Variable(tf.random_uniform([self.out_units], 0, 0.01, dtype=tf.float32), name='b2') # bias
         
