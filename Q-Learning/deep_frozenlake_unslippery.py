@@ -1,23 +1,11 @@
+from Environment import Environment
 import tensorflow as tf
 import numpy as np
 import random
-import gym
-from gym.envs.registration import register
 from argparse import ArgumentParser
-class Environment():
-    def __init__(self):
-        pass
-    def FrozenLakeNoSlippery(self):
-        register(
-                 id= 'FrozenLakeNoSlippery-v0',
-                 entry_point='gym.envs.toy_text:FrozenLakeEnv',
-                 kwargs={'map_name' : '4x4', 'is_slippery': False},
-                 max_episode_steps=100,
-                 reward_threshold=0.82)
-        env = gym.make('FrozenLakeNoSlippery-v0')
-        return env
 
 class DeepQAgent():
+    
     def __init__(self, args, env):
         # set hyperparameters
         self.max_episodes = int(args.max_episodes)
@@ -40,27 +28,28 @@ class DeepQAgent():
         self.saver = tf.train.Saver()
 
     def _nn_model(self):
+
         self.a0 = tf.placeholder(tf.float32, shape=[1, self.in_units]) # input layer
         self.y = tf.placeholder(tf.float32, shape=[1, self.out_units]) # ouput layer
         
         # from input layer to hidden layer
-        self.w1 = tf.Variable(tf.zeros([self.in_units, self.hidden_units], dtype=tf.float32), name='w1') # weight
-        self.b1 = tf.Variable(tf.random_uniform([self.hidden_units], 0, 0.01, dtype=tf.float32), name='b1') # bias
-        self.a1 = tf.nn.relu(tf.matmul(self.a0, self.w1) + self.b1) # the ouput of hidden layer
+        w1 = tf.Variable(tf.zeros([self.in_units, self.hidden_units], dtype=tf.float32), name='w1') # weight
+        b1 = tf.Variable(tf.random_uniform([self.hidden_units], 0, 0.01, dtype=tf.float32), name='b1') # bias
+        a1 = tf.nn.relu(tf.matmul(self.a0, w1) + b1) # the ouput of hidden layer
         
         # from hidden layer to output layer
-        self.w2 = tf.Variable(tf.zeros([self.hidden_units, self.out_units], dtype=tf.float32), name='w2') # weight
-        self.b2 = tf.Variable(tf.random_uniform([self.out_units], 0, 0.01, dtype=tf.float32), name='b2') # bias
+        w2 = tf.Variable(tf.zeros([self.hidden_units, self.out_units], dtype=tf.float32), name='w2') # weight
+        b2 = tf.Variable(tf.random_uniform([self.out_units], 0, 0.01, dtype=tf.float32), name='b2') # bias
         
         # Q-value and Action
-        self.a2 = tf.matmul(self.a1, self.w2) + self.b2 # the predicted_y (Q-value) of four actions
+        self.a2 = tf.matmul(a1, w2) + b2 # the predicted_y (Q-value) of four actions
         self.action = tf.argmax(self.a2, 1) # the agent would take the action which has maximum Q-value
         
         # loss function
-        self.loss = tf.reduce_sum(tf.square(self.a2-self.y))
+        loss = tf.reduce_sum(tf.square(self.a2-self.y))
         
         # upate model
-        self.update_model =  tf.train.GradientDescentOptimizer(learning_rate=0.05).minimize(self.loss)
+        self.update_model =  tf.train.GradientDescentOptimizer(learning_rate=0.05).minimize(loss)
     
     def train(self):
         # hyper parameter
