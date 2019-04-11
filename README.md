@@ -20,7 +20,7 @@ pip3 install -r requirements.txt
 
 ## Q-Learning
 ### Medium Tutorial
-The complete tutoriol will be released as soon as possible.
+[The complete tutoriol is released.](https://medium.com/@qempsil0914/zero-to-one-deep-q-learning-part1-basic-introduction-and-implementation-bb7602b55a2c)
 
 ### Problem Definition
 We use [FrozenLake-v0](https://gym.openai.com/envs/FrozenLake-v0/) without slippery and define it in class Environment
