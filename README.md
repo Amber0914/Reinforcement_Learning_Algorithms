@@ -40,7 +40,7 @@ python3 deep_frozenlake_unslippery.py --max_episodes=20000 --max_actions=99 --di
 The complete tutorial will be released soon
 
 ### Problem Definition
-We use [CartPole-v1](https://gym.openai.com/envs/CartPole-v1/) as example
+Take [CartPole-v1](https://gym.openai.com/envs/CartPole-v1/) as example
 
 ### run 
 ```
