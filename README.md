@@ -35,3 +35,14 @@ max_episodes ≥ 15000.
 ```
 python3 deep_frozenlake_unslippery.py --max_episodes=20000 --max_actions=99 --discount=0.95 --exploration_rate=1.0 --hidden_units=10
 ```
+
+## Double Q-Learning (Double Q Network)
+The complete tutorial will be released soon
+
+### Problem Definition
+We use [CartPole-v1](https://gym.openai.com/envs/CartPole-v1/)
+
+### run 
+```
+python3 main.py --max_episodes=20000 --max_actions=10000 --exploration_rate=1.0 --exploration_decay=0.0001 --batch_size=64
+```
