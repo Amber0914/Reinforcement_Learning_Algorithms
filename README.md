@@ -18,7 +18,7 @@ gym==0.12.1
 pip3 install -r requirements.txt
 ```
 
-## Q-Learning
+## [Q-Learning](https://github.com/Amber0914/Reinforcement_Learning_Algorithms/tree/master/Q-Learning)
 ### Medium Tutorial
 [The complete tutorial is released.](https://medium.com/@qempsil0914/zero-to-one-deep-q-learning-part1-basic-introduction-and-implementation-bb7602b55a2c)
 
@@ -36,11 +36,11 @@ max_episodes ≥ 15000.
 python3 deep_frozenlake_unslippery.py --max_episodes=20000 --max_actions=99 --discount=0.95 --exploration_rate=1.0 --hidden_units=10
 ```
 
-## Double Q-Learning (Double Q Network)
+## [Double Q-Learning (Double Q Network)](https://github.com/Amber0914/Reinforcement_Learning_Algorithms/tree/master/Double-Q-Learning)
 The complete tutorial will be released soon
 
 ### Problem Definition
-We use [CartPole-v1](https://gym.openai.com/envs/CartPole-v1/)
+Take [CartPole-v1](https://gym.openai.com/envs/CartPole-v1/) as example
 
 ### run 
 ```
