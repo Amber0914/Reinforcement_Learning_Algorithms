@@ -28,7 +28,6 @@ class DeepQAgent():
         self.saver = tf.train.Saver()
 
     def _nn_model(self):
-
         self.a0 = tf.placeholder(tf.float32, shape=[1, self.in_units]) # input layer
         self.y = tf.placeholder(tf.float32, shape=[1, self.out_units]) # ouput layer
         
@@ -48,7 +47,7 @@ class DeepQAgent():
         # loss function
         loss = tf.reduce_sum(tf.square(self.a2-self.y))
         
-        # upate model
+        # upate model, minimizing loss function
         self.update_model =  tf.train.GradientDescentOptimizer(learning_rate=0.05).minimize(loss)
     
     def train(self):
