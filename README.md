@@ -37,7 +37,7 @@ python3 deep_frozenlake_unslippery.py --max_episodes=20000 --max_actions=99 --di
 ```
 
 ## [Double Q-Learning (Double Q Network)](https://github.com/Amber0914/Reinforcement_Learning_Algorithms/tree/master/Double-Q-Learning)
-The complete tutorial will be released soon
+[The complete tutorial is released.](https://medium.com/@qempsil0914/deep-q-learning-part2-double-deep-q-network-double-dqn-b8fc9212bbb2)
 
 ### Problem Definition
 Take [CartPole-v1](https://gym.openai.com/envs/CartPole-v1/) as example
