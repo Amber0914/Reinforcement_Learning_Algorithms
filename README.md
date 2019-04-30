@@ -10,7 +10,7 @@ python 3.5.6
 ## Requirements.txt
 ```
 numpy==1.14.5
-tensorflow==1.10.1
+tensorflow==1.12.1
 gym==0.12.1
 ```
 #### Command for install
